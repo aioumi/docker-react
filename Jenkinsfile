@@ -1,14 +1,20 @@
-node {
-  
-  stage('Preparation') {
+#!/usr/bin/env groovy
+node { 
 
-    checkout scm
+stages {
+  stage('Build') {
+    steps {
+      sh 'echo "This is my first step"'
+    }
   }
-
-  stage('test') {
- }
-
-  stage('docker build'){
-    
- }
+  stage('Test') {
+    steps
+      sh 'echo "This is my Test step"'
+    }
+  }
+  stage('Deploy') {
+    steps {
+      sh 'echo "This is my Deploy step"'
+    }
+  }
 }
