@@ -1,13 +1,13 @@
-#!/usr/bin/env groovy
+
 node {
 
     checkout scm
 
     docker.withRegistry('https://registry.hub.docker.com', 'dockerHub') {
 
-        def customImage = docker.build("aioumi/docker-react")
+        def customImage = docker.build("miltonc/dockerwebapp")
 
         /* Push the container to the custom Registry */
         customImage.push()
     }
-
+}
